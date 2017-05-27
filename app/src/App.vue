@@ -2,31 +2,17 @@
   
   <div id="app">
     <sidebar> </sidebar>
-    <img src="./assets/logo.png">
-    <h1></h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="<h></h>ttp://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    <thread> </thread>
   </div>
 </template>
 
 
 <script>
   import Sidebar from './Sidebar/sidebar.vue';
+  import Thread from './messageView/thread.vue'
 
     export default {
-      components: {'sidebar': Sidebar},
+      components: {'sidebar': Sidebar,'thread':Thread},
         name: 'app',
         data() {
             return {
@@ -42,9 +28,15 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
-        color: #2c3e50;
-       
+        height: 100%;
     }
+     
+ 
+    body, html{ // needed to make the main view full height
+        height: 100%;
+    }
+       
+    
     
     h1,
     h2 {
@@ -64,4 +56,5 @@
     a {
         color: #42b983;
     }
+  
 </style>
