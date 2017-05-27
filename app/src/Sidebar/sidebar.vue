@@ -1,8 +1,8 @@
 <template>
    <div id="sidebar" onload="loadManifest">
-      <div id="primaryUser"></div>
+      <div id="primaryUser">{{user}}</div>
       <ul id="threadList">
-         <li v-for="thread in this.manifest" id="thread">
+         <li v-for="thread in this.manifest" id="threadSidebar">
             <div>
                 <p id="id">{{thread.UID}}</p>
                <ul id="paricipantList">
@@ -22,7 +22,8 @@
 
         data() {
             return {
-                manifest: null
+                manifest: null,
+                user: "Ben Cooper"
             }
         },
         mounted: function() {
@@ -67,15 +68,24 @@
         width: 20%;
         background-color: rebeccapurple;
         height: 100%;
-        position: absolute;
+        position: fixed;
     }
     
-    #thread {
+    #threadSidebar {
         width: calc(100% - 1px); 
         background-color: white;
         border-bottom: 1px solid black;
         border-right: 1px solid black;
         height: calc(15%-1px);
         margin: 0px;
+    }
+
+    #primaryUser{
+        font-family: 'Khula', sans-serif;
+        font-size: 35px;
+    }
+
+    #threadList{
+        margin-top:10px;
     }
 </style>
